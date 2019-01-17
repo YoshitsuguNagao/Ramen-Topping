@@ -2,11 +2,11 @@
 
 
 ## Description
-This is a game that you have to put the topping on the ramen bowl. You will be given on the topping list. When you get a highter level you will have to get more toppings and the speed of falling will incleace.
+This is a game that you have to put the topping on the ramen bowl. You will be given on the topping list. When you get a highter level you will have to get more toppings and the speed of falling will incleace.
 
 
 ## MVP (DOM - CANVAS)
-CANVAS You have a ramen bowl to catch the toppings. You lose when you catch the wrong topping.
+CANVAS You have a ramen bowl to catch the toppings. You lose when you catch the wrong topping.
 
 
 ## Backlog
@@ -20,7 +20,7 @@ CANVAS You have a ramen bowl to catch the toppings. You lose when you catch the
 - add extra noodle for topping
 
 ### Image
-- add images for background and gameover screen.
+- add images for background and gameover screen.
 
 ### Sounds
 - add sounds(if it's possible)
@@ -93,7 +93,7 @@ function Topping(type, isTopping)
   this.x;
   this.y;
   this.speed;
-  this.type;
+  this.type;
   this.isTopping;
   this.ctx;
 Topping.draw()
