@@ -29,8 +29,8 @@ function main() {
     destroyDom(splachScreen);
   }
 
-  buildSplashScreen();
-  destroySlpashScreen();
+  // buildSplashScreen();
+  // destroySlpashScreen();
 
   function buildGameScreen() {
     gameScreen = buildDom(`
@@ -58,7 +58,7 @@ function main() {
     destroyDom(gameScreen);
   }
   buildGameScreen();
-  destroyGameScreen();
+  // destroyGameScreen();
   
   function buildGameOverScreen() {
     gameOverScreen = buildDom(`
@@ -76,10 +76,28 @@ function main() {
     destroyDom(gameOverScreen);
   }
   
-  buildGameOverScreen();
-  destroyGameOverScreen();
+  // buildGameOverScreen();
+  // destroyGameOverScreen();
 
 
+  // function startGame() {
+  var canvas = document.getElementById('canvas');
+  var game = new Game(canvas);
+  var onKeyDown = function (event) {
+    console.log(event.keyCode);
+    switch(event.keyCode) {
+      // case 37: game.keyLeft(); break;
+      // case 39: game.keyRight(); break;
+    }
+  }
+  //Add event lisner
+  // document.addEventListener('keyup', onKeyDown);
+  document.addEventListener('keydown', onKeyDown);
+
+  //Start the game
+  game.start();
+  // };
+  
 
 
 
