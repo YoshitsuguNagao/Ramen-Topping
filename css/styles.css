@@ -55,7 +55,6 @@ body {
   display: flex;
 }
 
-
 .game-screen {
   display: flex;
   flex-direction: column;
@@ -102,3 +101,10 @@ body {
   width: 100%;
 }
 
+.game-over {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
