@@ -17,7 +17,7 @@ CANVAS You have a ramen bowl to catch the toppings. You lose when you catch the 
 - check the topping, if it's correct topping or not.
 
 ### Extra Noodle
-- add extra noodle for topping
+- add extra noodle for topping.
 
 ### Image
 - add images for background and gameover screen.
@@ -32,6 +32,7 @@ CANVAS You have a ramen bowl to catch the toppings. You lose when you catch the 
 - show the current score.
 
 ### Pause
+- pause and show pause screen.
 
 ### Lives
 - Get one more live when you get extra noodle.
@@ -105,16 +106,14 @@ Topping.isInScreen()
 Definition of the different states and their transition (transition functions)
 
 ### Splash Screen
-- startGameClick()
-- ruleClick()
 - buildSplashScreen()
 - destroySplashScreen()
-- addEventLisner()
+- add Event Listener
+  - ruleClick()
+  - startGameClick()
 
 ### Game Screen
 - buildGameScreen()
-- buildScreen()
-- buildScoreScreen()
 - destroyGameScreen()
 
 ### Gameover Screen
@@ -135,40 +134,34 @@ Task definition in order of priority
 - Write destroy Splash
 - Write destroy Game
 - Write destroy Game Over
-- Write startGame
+- Call startGame
+
+### Game
+- Creat game.js 
+- Write the loop in Start
+- Add event listeners
+- Create new Player
+- Create new Toppings
+- Wtite update clear and draw inside of the loop 
 
 ### Player
 - Create player.js
-- Write Player constructor.
-- Write methods for update and draw.
-- Write a method for a direction.
+- Write Player constructor
+- Write methods for update and draw
+- Write a method for a direction
 - Write a method for a collision with Topping
 - Write a method for losing Life(check if it is correct topping)
 
 ### Topping
 - Create topping.js 
 - Write Topping constructor
-- Write methods for update and draw.  
+- Write methods for update and draw
 - Write a method for check if it is in screen
 - Create topping-list.js
 - Write a list of toppings(Array of Object)
 
-### Game
-- Creat game.js 
-- Write the loop
-- Start loop 
-- Add event listeners
-- Create new Player
-- Create one enemy
-- Create more enemies inside the loop
-- Inside the loop update and draw
-- Clear canvas
 
 ## Links
-
-### Trello
-[Link url](https://trello.com)
-
 
 ### Git
 URls for the project repo and deploy
