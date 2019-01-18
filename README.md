@@ -138,7 +138,7 @@ Task definition in order of priority
 
 ### Game
 - Creat game.js 
-- Write the loop in Start
+- Write the loop in Start
 - Add event listeners
 - Create new Player
 - Create new Toppings
