@@ -23,11 +23,11 @@ function main() {
       <a class="button">Rule</a>
     </div>
     `);
-  }
+  };
 
   function destroySlpashScreen() {
     destroyDom(splachScreen);
-  }
+  };
 
   // buildSplashScreen();
   // destroySlpashScreen();
@@ -56,7 +56,7 @@ function main() {
 
   function destroyGameScreen() {
     destroyDom(gameScreen);
-  }
+  };
   buildGameScreen();
   // destroyGameScreen();
   
@@ -70,11 +70,11 @@ function main() {
     <a class="button">Home</a>
     </div>
     `);
-  }
+  };
   
   function destroyGameOverScreen() {
     destroyDom(gameOverScreen);
-  }
+  };
   
   // buildGameOverScreen();
   // destroyGameOverScreen();
@@ -86,10 +86,10 @@ function main() {
   var onKeyDown = function (event) {
     console.log(event.keyCode);
     switch(event.keyCode) {
-      // case 37: game.keyLeft(); break;
-      // case 39: game.keyRight(); break;
-    }
-  }
+      case 37: game.keyLeft(); break;
+      case 39: game.keyRight(); break;
+    };
+  };
   //Add event lisner
   // document.addEventListener('keyup', onKeyDown);
   document.addEventListener('keydown', onKeyDown);
