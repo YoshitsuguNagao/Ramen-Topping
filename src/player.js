@@ -7,7 +7,7 @@ function Player(canvas) {
   this.x = (canvas.width - this.size) / 2;
   this.y = 550;
   this.lives;
-  this.score = 0;
+  // this.score = 0;
   this.ingredients; 
   this.direction = 0;
   this.speed = 5;
@@ -17,9 +17,14 @@ Player.prototype.setDirection = function(direction) {
   this.direction = direction;
 };
 
-Player.prototype.isCollided = function() {
-  
-};
+Player.prototype.isCollided = function(topping) {
+  var collidesRight = this.x + this.size / 2 > topping.x - topping.size / 2;
+  var collidesLeft = this.x - this.size / 2 < topping.x + topping.size / 2;
+  var collidesTop = this.y - this.size / 2 < topping.y + topping.size / 2;
+  var collideBottom = this.y + this.size / 2 > topping.y - topping.size / 2;
+
+  return collidesRight && collidesLeft && collidesTop && collideBottom;
+}
 
 Player.prototype.draw = function() {
   this.ctx.fillRect(this.x, this.y, this.size, this.size);

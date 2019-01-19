@@ -39,10 +39,16 @@ function Game(canvas, score) {
     this.toppings = this.toppings.filter(function(topping) {
       return topping.isInScreen();
     });
-    console.log(this.toppings.length)
+    // console.log(this.toppings.length)
     this.toppings.forEach(function(topping) {
       topping.update();
-    });
+      
+      if(this.player.isCollided(topping)) {
+        this.score++;
+        topping.delete();
+        console.log(this.score) 
+      };
+    }.bind(this));
   };
 };
 
@@ -57,6 +63,7 @@ Game.prototype.start = function() {
     this._drawCanvas();
     
     this.animation = window.requestAnimationFrame(loop.bind(this));
+
   };
   this.animation = window.requestAnimationFrame(loop.bind(this));
 };
@@ -72,4 +79,12 @@ Game.prototype.keyLeft = function() {
 
 Game.prototype.keyRight = function() {
   this.player.setDirection(1);
+};
+
+Game.prototype.keyP = function() {
+  this.stop();
+};
+
+Game.prototype.keyS = function() {
+  this.start();
 };

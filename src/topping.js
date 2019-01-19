@@ -23,3 +23,7 @@ Topping.prototype.update = function() {
 Topping.prototype.isInScreen = function() {
   return this.y - this.canvas.height < 0;
 };
+
+Topping.prototype.delete = function() {
+  this.y = 999;
+}

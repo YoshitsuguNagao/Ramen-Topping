@@ -84,10 +84,12 @@ function main() {
   var canvas = document.getElementById('canvas');
   var game = new Game(canvas);
   var onKeyDown = function (event) {
-    console.log(event.keyCode);
+    // console.log(event.keyCode);
     switch(event.keyCode) {
       case 37: game.keyLeft(); break;
       case 39: game.keyRight(); break;
+      case 83: game.keyS(); break;
+      case 80: game.keyP(); break;
     };
   };
   //Add event lisner
@@ -97,6 +99,7 @@ function main() {
   //Start the game
   game.start();
   // };
+  
   
 
 
