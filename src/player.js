@@ -3,9 +3,9 @@
 function Player(canvas) {
   this.ctx = canvas.getContext('2d');
   this.canvas = canvas;
-  this.size = 50;
+  this.size = 100;
   this.x = (canvas.width - this.size) / 2;
-  this.y = 550;
+  this.y = 500;
   this.lives;
   // this.score = 0;
   this.ingredients; 
@@ -27,7 +27,9 @@ Player.prototype.isCollided = function(topping) {
 }
 
 Player.prototype.draw = function() {
-  this.ctx.fillRect(this.x, this.y, this.size, this.size);
+  var bowl = new Image();
+  bowl.src = 'images/shoyu2.png';
+  this.ctx.drawImage(bowl, this.x, this.y, this.size, this.size);
 };
 
 Player.prototype.update = function() {
