@@ -1,11 +1,11 @@
 'use strict';
 
 function Topping(canvas, x, type, isTopping) {
-  this.size = 30;
+  this.size = 50;
   this.x = x;
   this.y = 0;
   this.speed = 5;
-  this.type;
+  this.type = type;
   this.isTopping;
   this.ctx = canvas.getContext('2d');
   this.canvas = canvas;
@@ -13,7 +13,10 @@ function Topping(canvas, x, type, isTopping) {
 
 
 Topping.prototype.draw = function() {
-  this.ctx.fillRect(this.x, this.y, this.size, this.size);
+  // this.ctx.fillRect(this.x, this.y, this.size, this.size);
+  var toppingImage = new Image();
+  toppingImage.src = toppingList[this.type].image;
+  this.ctx.drawImage(toppingImage, this.x, this.y, this.size, this.size);
 };
 
 Topping.prototype.update = function() {
@@ -27,3 +30,5 @@ Topping.prototype.isInScreen = function() {
 Topping.prototype.delete = function() {
   this.y = 999;
 }
+
+
