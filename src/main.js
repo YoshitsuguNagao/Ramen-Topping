@@ -19,7 +19,7 @@ function main() {
 
   function buildSplashScreen() {
     splachScreen = buildDom(`
-    <img src="images/title.png" title="title" width="500"> 
+    <img src="images/title.png" title="title"> 
     <div class="btn-container">
       <a id="start-btn" class="button">Start</a>
       <a id="rule-btn" class="button">Rule</a>
@@ -28,7 +28,7 @@ function main() {
     splachScreen.classList.add("splash");
     splachScreen
       .querySelector("#start-btn")
-      .addEventListener("click",startGame);
+      .addEventListener("click",clickStart);
   };
 
   function destroySplashScreen() {
@@ -77,11 +77,11 @@ function main() {
     gameOverScreen.classList.add("game-over");
     gameOverScreen
       .querySelector("#continue-btn")
-      .addEventListener("click",startGame);
+      .addEventListener("click",clickContinue);
     
     gameOverScreen
       .querySelector("#home-btn")
-      .addEventListener("click",buildSplashScreen);
+      .addEventListener("click",clickHome);
     
   };
   
@@ -90,14 +90,24 @@ function main() {
     destroyDom(gameOverScreen);
   };
   
+  function clickStart() {
+    destroySplashScreen();
+    buildGameScreen();
+    startGame();
+  }
+  
+  function clickHome() {
+    destroyGameOverScreen();
+    buildSplashScreen();
+  };
+
+  function clickContinue() {
+    destroyGameOverScreen();
+    buildGameScreen();  
+    startGame();
+  };
   
   function startGame() {
-    if() {
-      
-    }
-    destroySplashScreen();
-    buildGameScreen();  
-    
     var canvas = document.getElementById('canvas');
     var game = new Game(canvas,endGame);
     var onKeyDown = function (event) {

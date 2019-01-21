@@ -39,7 +39,10 @@ body {
 }
 
 .splash img {
-  margin: 5rem;
+  margin: 10% 0;
+  width: 75%;    
+  max-width: 500px;
+
 }
 
 .container h1 {
@@ -60,6 +63,9 @@ body {
 
 .btn-container {
   display: flex;
+  margin-bottom: 20%;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .game-screen {
