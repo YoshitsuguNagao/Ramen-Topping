@@ -57,8 +57,6 @@ function Game(canvas, endGame, updateScore, score ) {
         if(topping.type === toppingList.length - 1){
           this.player.loseLife();
           
-          
-          
         }
         topping.delete();
         console.log(this.scores) 

@@ -45,10 +45,10 @@ function main() {
         <img src="images/title.png" alt="">
         <div class="score-box">
           <article>
-            <h2>Score: <span class="score">XXX</span></h2>
+            <h2>Score: <span class="score">0</span></h2>
           </article>
           <article>
-            <h2>Level: <span class="level">XXX</span></h2>
+            <h2>Level: <span class="level">1</span></h2>
           </article>
         </div>
         <div class="order-box">
@@ -69,12 +69,12 @@ function main() {
             <h2>: <span class="nori-count">X</span></h2>
           </article>
           <article class="topping-order">
-            <img src="images/leek.png" alt="leek" id="leek">
-            <h2>: <span class="leek-count">X</span></h2>
+            <img src="images/negi.png" alt="negi" id="negi">
+            <h2>: <span class="negi-count">X</span></h2>
           </article>
           <article class="topping-order">
             <img src="images/extra-noodle.png" alt="noodle" id="noodle">
-            <h2>: <span class="noodle-count">X</span></h2>
+            <h2>: <span class="noodle-count">3</span></h2>
           </article>
         </div>
       </div>
@@ -86,10 +86,10 @@ function main() {
         <img src="images/title.png" alt="">
         <div class="score-box">
           <article>
-            <h2>Score: <span class="score">XXX</span></h2>
+            <h2>Score: <span class="score">0</span></h2>
           </article>
           <article>
-            <h2>Level: <span class="level">XXX</span></h2>
+            <h2>Level: <span class="level">1</span></h2>
           </article>
         </div>
         <div class="order-box">
@@ -110,12 +110,12 @@ function main() {
             <h2>: <span class="nori-count">X</span></h2>
           </article>
           <article class="topping-order">
-            <img src="images/leek.png" alt="leek" id="leek">
-            <h2>: <span class="leek-count">X</span></h2>
+            <img src="images/negi.png" alt="negi" id="negi">
+            <h2>: <span class="negi-count">X</span></h2>
           </article>
           <article class="topping-order">
             <img src="images/extra-noodle.png" alt="noodle" id="noodle">
-            <h2>: <span class="noodle-count">X</span></h2>
+            <h2>: <span class="noodle-count">3</span></h2>
           </article>
         </div>
       </div>
@@ -179,8 +179,6 @@ function main() {
     return target;
   };
 
-
-
   function startGame() {
     var canvas = document.getElementById('canvas');
     var game = new Game(canvas, endGame, updateScore);
@@ -205,8 +203,10 @@ function main() {
     };
 
     function updateScore() {
-
-      changeDisplay(".score",this.scores[0]+this.scores[1])
+      changeDisplay(".score",this.scores[0]+this.scores[1]);
+      for(var i = 0; i <= 5; i++) { 
+        changeDisplay(toppingList[i].class,this.scores[i]);
+      };
     }
   };
 
