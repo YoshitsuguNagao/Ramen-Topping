@@ -28,8 +28,8 @@ function Game(canvas, endGame, updateScore, score ) {
       topping.draw();
     });
     var norenImage = new Image();
-    norenImage.src = 'images/noren.jpg';
-    this.ctx.drawImage(norenImage, 50, 0, 700, 150);
+    norenImage.src = 'images/noren.png';
+    this.ctx.drawImage(norenImage, 50, -10, 700, 150);
   };
 
   this._createTopping = function() {
