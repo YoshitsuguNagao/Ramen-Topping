@@ -54,23 +54,23 @@ function main() {
         <div class="order-box">
           <article class="topping-order">
             <img src="images/egg.png" alt="egg" id="egg">
-            <h2>: <span class="egg-count">X</span></h2>
+            <h2>: <span class="egg-count">0</span></h2>
           </article>
           <article class="topping-order">
             <img src="images/naruto.png" alt="naruto" id="naruto">
-            <h2>: <span class="naruto-count">X</span></h2>
+            <h2>: <span class="naruto-count">0</span></h2>
           </article>
           <article class="topping-order">
             <img src="images/chasyu.png" alt="chasyu" id="chasyu">
-            <h2>: <span class="chasyu-count">X</span></h2>
+            <h2>: <span class="chasyu-count">0</span></h2>
           </article>
           <article class="topping-order">
             <img src="images/nori.png" alt="nori" id="nori">
-            <h2>: <span class="nori-count">X</span></h2>
+            <h2>: <span class="nori-count">0</span></h2>
           </article>
           <article class="topping-order">
             <img src="images/negi.png" alt="negi" id="negi">
-            <h2>: <span class="negi-count">X</span></h2>
+            <h2>: <span class="negi-count">0</span></h2>
           </article>
           <article class="topping-order">
             <img src="images/extra-noodle.png" alt="noodle" id="noodle">
@@ -95,23 +95,23 @@ function main() {
         <div class="order-box">
           <article class="topping-order">
             <img src="images/egg.png" alt="egg" id="egg">
-            <h2>: <span class="egg-count">X</span></h2>
+            <h2>: <span class="egg-count">0</span></h2>
           </article>
           <article class="topping-order">
             <img src="images/naruto.png" alt="naruto" id="naruto">
-            <h2>: <span class="naruto-count">X</span></h2>
+            <h2>: <span class="naruto-count">0</span></h2>
           </article>
           <article class="topping-order">
             <img src="images/chasyu.png" alt="chasyu" id="chasyu">
-            <h2>: <span class="chasyu-count">X</span></h2>
+            <h2>: <span class="chasyu-count">0</span></h2>
           </article>
           <article class="topping-order">
             <img src="images/nori.png" alt="nori" id="nori">
-            <h2>: <span class="nori-count">X</span></h2>
+            <h2>: <span class="nori-count">0</span></h2>
           </article>
           <article class="topping-order">
             <img src="images/negi.png" alt="negi" id="negi">
-            <h2>: <span class="negi-count">X</span></h2>
+            <h2>: <span class="negi-count">0</span></h2>
           </article>
           <article class="topping-order">
             <img src="images/extra-noodle.png" alt="noodle" id="noodle">
@@ -133,8 +133,8 @@ function main() {
   function buildGameOverScreen() {
     gameOverScreen = buildDom(`
     <img src="images/gameover.png" alt="">
-    <h2>Level <span>X</span></h2>
-    <h2>Score <span>X</span></h2>
+    <h2>Score <span class="score">X</span></h2>
+    <h2>Level <span class="level">X</span></h2>
     <div class="btn-container">
       <a id="continue-btn" class="button">Continue</a>
       <a id="home-btn" class="button">Home</a>
@@ -200,10 +200,18 @@ function main() {
       game.stop();
       destroyGameScreen();
       buildGameOverScreen();
+      var total = this.scores.reduce(function(accu, score) {
+        return accu + score; 
+      })
+      changeDisplay(".score",total - this.scores[5]);
+      changeDisplay(".level","Y");
     };
 
     function updateScore() {
-      changeDisplay(".score",this.scores[0]+this.scores[1]);
+      var total = this.scores.reduce(function(accu, score) {
+        return accu + score; 
+      })
+      changeDisplay(".score",total - this.scores[5]);
       for(var i = 0; i <= 5; i++) { 
         changeDisplay(toppingList[i].class,this.scores[i]);
       };
