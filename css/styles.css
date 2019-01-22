@@ -13,6 +13,11 @@ body {
   font-family: Helvetica, Arial, sans-serif;
 }
 
+@font-face {
+  font-family: "toroman";
+  src: url('../fonts/toroman.ttf') format('truetype');
+}
+
 /* ---- game styles ---- */
 
 body {
@@ -56,6 +61,7 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 2rem;
+  font-family: toroman;
   display: block;
   padding: 1rem 2rem;
   margin: 0.5rem;
