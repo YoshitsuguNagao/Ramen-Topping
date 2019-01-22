@@ -42,7 +42,7 @@ function Game(canvas, endGame, updateScore, score ) {
   this._updateGame = function() {
     this.player.update();
     if (Math.random() > 0.98) {
-      this._createTopping();
+      this._createTopping();    
     };
     this.toppings = this.toppings.filter(function(topping) {
       return topping.isInScreen();

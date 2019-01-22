@@ -19,7 +19,9 @@ function main() {
 
   function buildSplashScreen() {
     splachScreen = buildDom(`
-    <img src="images/title.png" title="title"> 
+    <!-- <div class="title-img"> -->
+      <img src="images/title.png" title="title"> 
+    <!-- </div> -->
     <div class="btn-container">
       <a id="start-btn" class="button">Start</a>
       <a id="rule-btn" class="button">Rule</a>
