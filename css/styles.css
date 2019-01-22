@@ -160,6 +160,7 @@ body {
   margin-top: 10%;
 }
 
-.game-over h2 {
-  font-size: 2.5rem;
+.game-over h2 {    
+  font-size: 2rem;
+  margin: 1rem;
 }
