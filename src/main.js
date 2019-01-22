@@ -19,9 +19,9 @@ function main() {
 
   function buildSplashScreen() {
     splachScreen = buildDom(`
-    <!-- <div class="title-img"> -->
+    <div class="title-img">
       <img src="images/title.png" title="title"> 
-    <!-- </div> -->
+    </div>
     <div class="btn-container">
       <a id="start-btn" class="button">Start</a>
       <a id="rule-btn" class="button">Rule</a>
@@ -39,39 +39,89 @@ function main() {
   };
   
   function buildGameScreen() {
-    gameScreen = buildDom(`
-    <div class="top" >
-      <div class="order-box">
-      <article class="topping-order">
-        
-        <div class="topping-img"></div>
-        <h2>: <span class="egg-count">X</span></h2>
-      </article>
-      <article class="topping-order">
-        <div class="topping-img"></div>
-        <h2>: <span class="chasyu-count">X</span></h2>
-      </article>
-      <article class="topping-order">
-        <div class="topping-img"></div>
-        <h2>: <span class="leek-count">X</span></h2>
-      </article>
-      <article class="topping-order">
-        <div class="topping-img"></div>
-        <h2>: <span class="nori-count">X</span></h2>
-      </article>
-      <article class="topping-order">
-        <div class="topping-img"></div>
-        <h2>: <span class="naruto-count">X</span></h2>
-      </article>
+    if("ontouchstart" in document.documentElement){
+      gameScreen = buildDom(`
+      <div class="top" >
+        <img src="images/title.png" alt="">
+        <div class="score-box">
+          <article>
+            <h2>Score: <span class="score">XXX</span></h2>
+          </article>
+          <article>
+            <h2>Level: <span class="level">XXX</span></h2>
+          </article>
+        </div>
+        <div class="order-box">
+          <article class="topping-order">
+            <img src="images/egg.png" alt="egg" id="egg">
+            <h2>: <span class="egg-count">X</span></h2>
+          </article>
+          <article class="topping-order">
+            <img src="images/naruto.png" alt="naruto" id="naruto">
+            <h2>: <span class="naruto-count">X</span></h2>
+          </article>
+          <article class="topping-order">
+            <img src="images/chasyu.png" alt="chasyu" id="chasyu">
+            <h2>: <span class="chasyu-count">X</span></h2>
+          </article>
+          <article class="topping-order">
+            <img src="images/nori.png" alt="nori" id="nori">
+            <h2>: <span class="nori-count">X</span></h2>
+          </article>
+          <article class="topping-order">
+            <img src="images/leek.png" alt="leek" id="leek">
+            <h2>: <span class="leek-count">X</span></h2>
+          </article>
+          <article class="topping-order">
+            <img src="images/extra-noodle.png" alt="noodle" id="noodle">
+            <h2>: <span class="noodle-count">X</span></h2>
+          </article>
+        </div>
       </div>
-      <img src="images/title.png" alt="">
-      <div class="score-box">
-        <h2>Score: <span class="score">0</span></h2>
-        <h2>Life :<span class="life">3</span></h2>
+      <canvas id="canvas" width="375" height="435"></canvas>
+      `); 
+    } else {
+      gameScreen = buildDom(`
+      <div class="top" >
+        <img src="images/title.png" alt="">
+        <div class="score-box">
+          <article>
+            <h2>Score: <span class="score">XXX</span></h2>
+          </article>
+          <article>
+            <h2>Level: <span class="level">XXX</span></h2>
+          </article>
+        </div>
+        <div class="order-box">
+          <article class="topping-order">
+            <img src="images/egg.png" alt="egg" id="egg">
+            <h2>: <span class="egg-count">X</span></h2>
+          </article>
+          <article class="topping-order">
+            <img src="images/naruto.png" alt="naruto" id="naruto">
+            <h2>: <span class="naruto-count">X</span></h2>
+          </article>
+          <article class="topping-order">
+            <img src="images/chasyu.png" alt="chasyu" id="chasyu">
+            <h2>: <span class="chasyu-count">X</span></h2>
+          </article>
+          <article class="topping-order">
+            <img src="images/nori.png" alt="nori" id="nori">
+            <h2>: <span class="nori-count">X</span></h2>
+          </article>
+          <article class="topping-order">
+            <img src="images/leek.png" alt="leek" id="leek">
+            <h2>: <span class="leek-count">X</span></h2>
+          </article>
+          <article class="topping-order">
+            <img src="images/extra-noodle.png" alt="noodle" id="noodle">
+            <h2>: <span class="noodle-count">X</span></h2>
+          </article>
+        </div>
       </div>
-    </div>
-    <canvas id="canvas" width="800" height="600"></canvas>
-    `);
+      <canvas id="canvas" width="800" height="600"></canvas>
+      `);
+    }
     gameScreen.classList.add("game-screen");
   };
   
@@ -160,7 +210,7 @@ function main() {
     }
   };
 
-  // buildSplashScreen();
+  buildSplashScreen();
 };
 
 window.addEventListener('load',main);
