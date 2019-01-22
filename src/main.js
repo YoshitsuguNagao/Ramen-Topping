@@ -211,10 +211,11 @@ function main() {
       var total = this.scores.reduce(function(accu, score) {
         return accu + score; 
       })
-      changeDisplay(".score",total - this.scores[5]);
-      for(var i = 0; i <= 5; i++) { 
+      changeDisplay(".score",total - this.scores[5] - this.scores[6]);
+      for(var i = 0; i < 5; i++) { 
         changeDisplay(toppingList[i].class,this.scores[i]);
       };
+      changeDisplay(toppingList[5].class,this.scores[5] - this.scores[6] + 3)
     }
   };
 

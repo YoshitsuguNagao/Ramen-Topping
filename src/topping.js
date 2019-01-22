@@ -9,8 +9,7 @@ function Topping(canvas, x, type, isTopping) {
   this.isTopping;
   this.ctx = canvas.getContext('2d');
   this.canvas = canvas;
-}
-
+};
 
 Topping.prototype.draw = function() {
   // this.ctx.fillRect(this.x, this.y, this.size, this.size);
@@ -29,6 +28,6 @@ Topping.prototype.isInScreen = function() {
 
 Topping.prototype.delete = function() {
   this.y = 999;
-}
+};
 
 

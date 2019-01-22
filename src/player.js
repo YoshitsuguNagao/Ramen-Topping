@@ -49,6 +49,11 @@ Player.prototype.loseLife = function() {
   console.log(`Player lives: ${this.lives}`);
 }
 
+Player.prototype.gainLife = function() {
+  this.lives++;
+  console.log(`Player lives: ${this.lives}`);
+}
+
 Player.prototype.isDead = function() {
   return this.lives <= 0;
 }

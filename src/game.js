@@ -33,7 +33,7 @@ function Game(canvas, endGame, updateScore, score ) {
   };
 
   this._createTopping = function() {
-    var x = Math.random() * (canvas.width);
+    var x = Math.random() * (canvas.width - 50);
     this.type = Math.floor(Math.random() * (toppingList.length + 9));
     if(this.type >= (toppingList.length - 1)) {this.type = toppingList.length - 1};
     this.toppings.push(new Topping(canvas, x, this.type, this.isTopping));
@@ -41,7 +41,7 @@ function Game(canvas, endGame, updateScore, score ) {
 
   this._updateGame = function() {
     this.player.update();
-    if (Math.random() > 0.98) {
+    if (Math.random() > 0.95) {
       this._createTopping();    
     };
     this.toppings = this.toppings.filter(function(topping) {
@@ -53,10 +53,11 @@ function Game(canvas, endGame, updateScore, score ) {
       if(this.player.isCollided(topping)) {
         this.scores[topping.type] += 1;
         this.updateScore();
-        // document.querySelector("score").innerText = this.scores[0];
         if(topping.type === toppingList.length - 1){
           this.player.loseLife();
-          
+        }
+        if(topping.type === toppingList.length - 2){
+          this.player.gainLife();
         }
         topping.delete();
         console.log(this.scores) 
@@ -64,6 +65,7 @@ function Game(canvas, endGame, updateScore, score ) {
     }.bind(this));
   };
 };
+
 
 Game.prototype.start = function() {
   function loop() {
