@@ -39,20 +39,34 @@ function main() {
   function buildGameScreen() {
     gameScreen = buildDom(`
     <div class="top" >
-    <div class="order-box">
-    <article class="topping-order">
-    <div class="topping-img"></div>
-    <h2>: <span class="topping-count">X</span></h2>
-    </article>
-    <article class="topping-order">
-    <div class="topping-img"></div>
-    <h2>: <span class="topping-count">X</span></h2>
-    </article>
-    </div>
-    <div class="score-box">
-    <h2>Score: <span class="score">XXX</span></h2>
-    <h2>Time :<span class="time">XXX</span></h2>
-    </div>
+      <div class="order-box">
+      <article class="topping-order">
+        
+        <div class="topping-img"></div>
+        <h2>: <span class="egg-count">X</span></h2>
+      </article>
+      <article class="topping-order">
+        <div class="topping-img"></div>
+        <h2>: <span class="chasyu-count">X</span></h2>
+      </article>
+      <article class="topping-order">
+        <div class="topping-img"></div>
+        <h2>: <span class="leek-count">X</span></h2>
+      </article>
+      <article class="topping-order">
+        <div class="topping-img"></div>
+        <h2>: <span class="nori-count">X</span></h2>
+      </article>
+      <article class="topping-order">
+        <div class="topping-img"></div>
+        <h2>: <span class="naruto-count">X</span></h2>
+      </article>
+      </div>
+      <img src="images/title.png" alt="">
+      <div class="score-box">
+        <h2>Score: <span class="score">0</span></h2>
+        <h2>Life :<span class="life">3</span></h2>
+      </div>
     </div>
     <canvas id="canvas" width="800" height="600"></canvas>
     `);
@@ -66,12 +80,12 @@ function main() {
 
   function buildGameOverScreen() {
     gameOverScreen = buildDom(`
-    <h1>Game Over</h1>
+    <img src="images/gameover.png" alt="">
     <h2>Level <span>X</span></h2>
     <h2>Score <span>X</span></h2>
     <div class="btn-container">
-    <a id="continue-btn" class="button">Continue</a>
-    <a id="home-btn" class="button">Home</a>
+      <a id="continue-btn" class="button">Continue</a>
+      <a id="home-btn" class="button">Home</a>
     </div>
     `);
     gameOverScreen.classList.add("game-over");
@@ -107,9 +121,17 @@ function main() {
     startGame();
   };
   
+  function changeDisplay(id, value) {
+    var target = document.querySelector(id);
+    target.innerText = value;
+    return target;
+  };
+
+
+
   function startGame() {
     var canvas = document.getElementById('canvas');
-    var game = new Game(canvas,endGame);
+    var game = new Game(canvas, endGame, updateScore);
     var onKeyDown = function (event) {
       switch(event.keyCode) {
         case 37: game.keyLeft(); break;
@@ -123,15 +145,20 @@ function main() {
     
     //Start the game
     game.start();
-    
+
     function endGame() {
       game.stop();
       destroyGameScreen();
       buildGameOverScreen();
     };
+
+    function updateScore() {
+
+      changeDisplay(".score",this.scores[0]+this.scores[1])
+    }
   };
 
-  buildSplashScreen();
+  // buildSplashScreen();
 };
 
 window.addEventListener('load',main);

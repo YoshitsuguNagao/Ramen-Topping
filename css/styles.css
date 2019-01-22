@@ -61,6 +61,12 @@ body {
   border-radius: .5rem;
 }
 
+.button:hover {
+
+  color:red;
+  cursor: pointer;
+}
+
 .btn-container {
   display: flex;
   margin-bottom: 20%;
@@ -92,6 +98,10 @@ body {
   margin: 0;
 }
 
+.top img {
+  height:100px;
+}
+
 .topping-order {
   /* height: 100%; */
   display: flex;
@@ -116,9 +126,13 @@ body {
 }
 
 .game-over {
-
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.game-over img {
+  width:50%;
+  margin-top: 10%;
 }

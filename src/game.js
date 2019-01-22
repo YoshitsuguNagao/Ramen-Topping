@@ -1,6 +1,6 @@
 'use strict';
 
-function Game(canvas, endGame, score ) {
+function Game(canvas, endGame, updateScore, score ) {
   this.ctx = canvas.getContext('2d');
   this.player = new Player(canvas);
   // this.ramen = {
@@ -16,6 +16,7 @@ function Game(canvas, endGame, score ) {
   this.animation;
   this.isGameOver = false;
   this.endGame = endGame;
+  this.updateScore = updateScore;
   
   this._clearCanvas = function() {
     this.ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -50,11 +51,11 @@ function Game(canvas, endGame, score ) {
       topping.update();
       
       if(this.player.isCollided(topping)) {
-        // debugger;
         this.scores[topping.type] += 1;
+        this.updateScore();
+        // document.querySelector("score").innerText = this.scores[0];
         if(topping.type === toppingList.length - 1){
           this.player.loseLife();
-          
           
           
           
@@ -107,3 +108,7 @@ Game.prototype.keyP = function() {
 Game.prototype.keyS = function() {
   this.start();
 };
+
+// Game.prototype.updateScore = function() {
+
+// }
