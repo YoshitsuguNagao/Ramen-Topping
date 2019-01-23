@@ -12,6 +12,7 @@ function Player(canvas, lives) {
   this.ingredients; 
   this.direction = 0;
   this.speed = 5;
+  this.level = 1;
 };
 
 Player.prototype.setDirection = function(direction) {
@@ -47,16 +48,21 @@ Player.prototype.update = function() {
 Player.prototype.loseLife = function() {
   this.lives--;
   console.log(`Player lives: ${this.lives}`);
-}
+};
 
 Player.prototype.gainLife = function() {
   this.lives++;
   console.log(`Player lives: ${this.lives}`);
-}
+};
 
 Player.prototype.isDead = function() {
   return this.lives <= 0;
-}
+};
+
+Player.prototype.levelUp = function() {
+  this.level++;
+  console.log(`Level up: ${this.level}`);
+};
 
 Player.prototype.hasCollidedWithTrueTopping = function() {
 
