@@ -81,6 +81,10 @@ function main() {
       </div>
     <!-- <canvas id="canvas" width="375" height="435"></canvas> -->
       <canvas id="canvas" width="800" height="600"></canvas>
+      <div class="arrow-container">
+      <div id="left" class="arrow"></div>
+      <div id="right" class="arrow"></div>
+      </div>
       `); 
     } else {
       gameScreen = buildDom(`
@@ -220,6 +224,15 @@ function main() {
     };
     //Add event lisner
     document.addEventListener('keydown', onKeyDown);
+
+    document.getElementById( "right" ).ontouchstart = function(event) {
+      game.keyRight();
+    }
+
+    document.getElementById( "left" ).ontouchstart = function(event) {
+      game.keyLeft();
+    }
+    
     
     //Start the game
     game.start();

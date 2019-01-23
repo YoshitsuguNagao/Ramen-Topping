@@ -30,6 +30,12 @@ body {
   align-items: center;
 }
 
+@media (max-width: 450px) {
+  body {
+    align-items: start;
+  }
+}
+
 .container {
   /* height:80vh; */
   width: 80vw;
@@ -185,6 +191,18 @@ h1 {
   #canvas {
     width: 100%;
   }
+}
+
+.arrow-container {
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.arrow {
+  width:100px;
+  border: 1px solid black;
+  height: 100%;
 }
 
 
