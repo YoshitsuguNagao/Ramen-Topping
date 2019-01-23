@@ -9,7 +9,7 @@ function Player(canvas, lives, orderList) {
   this.y = 520;
   this.lives = lives || 3;
   // this.score = 0;
-  this.orderList = levelList[0].orderList; 
+  this.orderList = levelList[0].orderList.concat(); 
   // this.type = type;
   this.direction = 0;
   this.speed = 5;

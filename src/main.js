@@ -4,6 +4,7 @@ function main() {
   var splachScreen;
   var gameScreen;
   var gameOverScreen;
+  var winScreen;
 
 // --- States and Transitions --- //
 
@@ -134,8 +135,8 @@ function main() {
   function buildGameOverScreen() {
     gameOverScreen = buildDom(`
     <img src="images/gameover.png" alt="">
-    <h2>Score <span class="score">X</span></h2>
-    <h2>Level <span class="level">X</span></h2>
+    <h2>Score: <span class="score">X</span></h2>
+    <h2>Level: <span class="level">X</span></h2>
     <div class="btn-container">
       <a id="continue-btn" class="button">Continue</a>
       <a id="home-btn" class="button">Home</a>
@@ -148,7 +149,7 @@ function main() {
     
     gameOverScreen
       .querySelector("#home-btn")
-      .addEventListener("click",clickHome);
+      .addEventListener("click",clickHomeFromGameOver);
     
   };
   
@@ -156,20 +157,48 @@ function main() {
     gameOverScreen.classList.remove("game-over");
     destroyDom(gameOverScreen);
   };
+
+  function buildWinScreen() {
+    winScreen = buildDom(`
+    <h1>WIN</h1>
+    <h2>Score: <span class="score">X</span></h2>
+    <div class="btn-container">
+      <a id="home-btn" class="button">Home</a>
+    </div>
+    `);
+    debugger
+    winScreen.classList.add("win-screen");
+    winScreen
+      .querySelector("#home-btn")
+      .addEventListener("click",clickHomeFronWin);
+    
+  };
+  
+  function destroyWinScreen() {
+    winScreen.classList.remove("win-screen");
+    destroyDom(winScreen);
+  };
   
   function clickStart() {
+    debugger
     destroySplashScreen();
     buildGameScreen();
     startGame();
   }
   
-  function clickHome() {
+  function clickHomeFromGameOver() {
     destroyGameOverScreen();
+    buildSplashScreen();
+  };
+
+  function clickHomeFronWin() {
+    destroyWinScreen();
     buildSplashScreen();
   };
 
   function clickContinue() {
     destroyGameOverScreen();
+    destroyWinScreen();
     buildGameScreen();  
     startGame();
   };
@@ -200,7 +229,11 @@ function main() {
     function endGame() {
       game.stop();
       destroyGameScreen();
-      buildGameOverScreen();
+      if(this.level > levelList.length) {
+        buildWinScreen();
+      } else {
+        buildGameOverScreen();
+      }
       var total = this.scores.reduce(function(accu, score) {
         return accu + score; 
       })

@@ -50,6 +50,31 @@ var toppingList = [
   },
 ];
 
+// var levelList = [
+//   {
+//     level: 1,
+//     orderList: [1, 1, 0, 0, 0, -1, -1],
+//   },
+//   {
+//     level: 2,
+//     orderList: [2, 2, 1, 0, 0, -1, -1],
+//   },
+//   {
+//     level: 3,
+//     orderList: [3, 3, 2, 1, 0, -1, -1],
+//   },
+//   {
+//     level: 4,
+//     orderList: [3, 3, 3, 2, 1, -1, -1],
+//   },
+//   {
+//     level: 5,
+//     orderList: [3, 3, 3, 3, 3, -1, -1],
+//   },
+// ];
+
+
+
 var levelList = [
   {
     level: 1,
@@ -57,21 +82,11 @@ var levelList = [
   },
   {
     level: 2,
-    orderList: [2, 2, 1, 0, 0, -1, -1],
+    orderList: [2, 1, 1, 0, 0, -1, -1],
   },
   {
     level: 3,
-    orderList: [3, 3, 2, 1, 0, -1, -1],
+    orderList: [2, 2, 1, 1, 1, -1, -1],
   },
-  {
-    level: 4,
-    orderList: [3, 3, 3, 2, 1, -1, -1],
-  },
-  {
-    level: 5,
-    orderList: [3, 3, 3, 3, 3, -1, -1],
-  },
-
 ];
-
 

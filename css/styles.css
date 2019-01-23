@@ -40,8 +40,12 @@ body {
   text-align: center;
 }
 
-.title {
+h1,h2{
   font-family: toroman;
+}
+
+h1 {
+  font-size: 8rem;
 }
 
 
@@ -105,7 +109,7 @@ body {
 }
 
 .order-box {
-  border:1px solid black;
+  /* border:1px solid black; */
   display: flex;
   flex-wrap: wrap;    
   width: 250px;
@@ -147,7 +151,7 @@ body {
 }
 
 .score-box {
-  border:1px solid black;
+  /* border:1px solid black; */
   display: flex;
 }
 
@@ -176,3 +180,10 @@ body {
   font-size: 2rem;
   margin: 1rem;
 }
+
+.win-screen h2 {
+  font-size: 2rem;
+  margin: 1rem;
+}
+
+

@@ -67,24 +67,12 @@ function Game(canvas, endGame, updateScore, setLevel,score ) {
           this.player.gainLife();
         }
         topping.delete();
-        // console.log(this.scores) 
       };
-      
-      if(this.player.hasAll()) {
-        debugger
-        this.level++;
-        if(this.level > levelList.length) {
-
-        }
-        this.player.orderList = levelList[this.level - 1].orderList;
-        this.updateScore();
-      }
       console.log(`level ${this.level}`)
     }.bind(this));
   };
 };
-  
-  
+
 Game.prototype.start = function() {
   function loop() {    
     this.orderList = this.player.orderList;
@@ -100,6 +88,15 @@ Game.prototype.start = function() {
     if(this.player.isDead()){
       this.endGame();
     };
+    
+    if(this.player.hasAll()) {
+      this.level++;
+      if(this.level > levelList.length) {
+    　   this.endGame();
+      }
+      this.player.orderList = levelList[this.level - 1].orderList.concat();
+      this.updateScore();
+    }
   };
   this.animation = window.requestAnimationFrame(loop.bind(this));
 };
@@ -124,7 +121,3 @@ Game.prototype.keyP = function() {
 Game.prototype.keyS = function() {
   this.start();
 };
-
-// Game.prototype.updateScore = function() {
-
-// }
