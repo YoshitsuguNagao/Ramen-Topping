@@ -29,7 +29,7 @@ function Game(canvas, endGame, updateScore, score ) {
     });
     var norenImage = new Image();
     norenImage.src = 'images/noren.png';
-    this.ctx.drawImage(norenImage, 50, -10, 700, 150);
+    this.ctx.drawImage(norenImage, 50, -10, 700, 130);
   };
 
   this._createTopping = function() {

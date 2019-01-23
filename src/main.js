@@ -40,6 +40,7 @@ function main() {
   
   function buildGameScreen() {
     if("ontouchstart" in document.documentElement){
+      debugger
       gameScreen = buildDom(`
       <div class="top" >
         <img src="images/title.png" alt="">

@@ -31,7 +31,7 @@ body {
 }
 
 .container {
-  height: 80vh;
+  height:80vh;
   width: 80vw;
   background-color: rgba(255,255,255,0.8);
   border-radius: 3rem;
@@ -39,6 +39,11 @@ body {
   max-width: 800px;
   text-align: center;
 }
+
+.title {
+  font-family: toroman;
+}
+
 
 .splash {
 }
@@ -106,7 +111,8 @@ body {
   width: 250px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 906px) {
+/* @media (max-width: 992px) { */
   .order-box {  
     width: 500px;
   }
