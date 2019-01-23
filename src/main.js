@@ -205,7 +205,7 @@ function main() {
         return accu + score; 
       })
       changeDisplay(".score",total - this.scores[5]);
-      changeDisplay(".level","Y");
+      changeDisplay(".level",this.level);
     };
 
     function updateScore() {
@@ -213,18 +213,16 @@ function main() {
         return accu + score; 
       })
       changeDisplay(".score",total - this.scores[5] - this.scores[6]);
+      changeDisplay(".level",this.level);
       for(var i = 0; i < 5; i++) { 
-        changeDisplay(toppingList[i].class,this.scores[i]);
+        changeDisplay(toppingList[i].class,this.orderList[i]);
       };
       changeDisplay(toppingList[5].class,this.scores[5] - this.scores[6] + 3)
     }
 
     function setLevel(level) {
-      debugger
       for(var i = 0; i < 5; i++) { 
-        if(levelList[level-1].orderList[i] > 0) {
-          changeDisplay(toppingList[i].class,levelList[level-1].orderList[i])
-        }
+          changeDisplay(toppingList[i].class,this.orderList[i])
       }
     }
   };

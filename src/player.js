@@ -1,6 +1,6 @@
 'use strict';
 
-function Player(canvas, lives) {
+function Player(canvas, lives, orderList) {
   this.ctx = canvas.getContext('2d');
   this.canvas = canvas;
   this.width = 100;
@@ -9,7 +9,8 @@ function Player(canvas, lives) {
   this.y = 520;
   this.lives = lives || 3;
   // this.score = 0;
-  this.ingredients; 
+  this.orderList = levelList[0].orderList; 
+  // this.type = type;
   this.direction = 0;
   this.speed = 5;
   this.level = 1;
@@ -60,8 +61,23 @@ Player.prototype.isDead = function() {
 };
 
 Player.prototype.levelUp = function() {
+
   this.level++;
   console.log(`Level up: ${this.level}`);
+};
+
+Player.prototype.getTopping = function(type) {
+  if(this.orderList[type] > 0) {
+    this.orderList[type]--;
+  }
+};
+
+Player.prototype.hasAll = function() {
+  var total = 0;
+  for(var i = 0; i < 5; i++) { 
+    total += this.orderList[i];
+  }
+  return total === 0;
 };
 
 Player.prototype.hasCollidedWithTrueTopping = function() {

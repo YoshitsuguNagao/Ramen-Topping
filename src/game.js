@@ -9,6 +9,7 @@ function Game(canvas, endGame, updateScore, setLevel,score ) {
   //  };
   this.toppings = [];
   this.scores = new Array(toppingList.length).fill(0);
+  this.orderList;
   // this.orderList;
   // this.gameEndedHandler;
   this.type;
@@ -36,13 +37,14 @@ function Game(canvas, endGame, updateScore, setLevel,score ) {
 
   this._createTopping = function() {
     var x = Math.random() * (canvas.width - 50);
-    this.type = Math.floor(Math.random() * (toppingList.length + 9));
+    this.type = Math.floor(Math.random() * (toppingList.length + 1));
     if(this.type >= (toppingList.length - 1)) {this.type = toppingList.length - 1};
     this.toppings.push(new Topping(canvas, x, this.type, this.isTopping));
   }.bind(this);
 
   this._updateGame = function() {
     this.player.update();
+    this.setLevel();
     if (Math.random() > 0.95) {
       this._createTopping();    
     };
@@ -54,6 +56,9 @@ function Game(canvas, endGame, updateScore, setLevel,score ) {
       
       if(this.player.isCollided(topping)) {
         this.scores[topping.type] += 1;
+        if(this.player.orderList[topping.type] > 0) {
+          this.player.orderList[topping.type] -= 1;
+        }
         this.updateScore();
         if(topping.type === toppingList.length - 1){
           this.player.loseLife();
@@ -62,16 +67,27 @@ function Game(canvas, endGame, updateScore, setLevel,score ) {
           this.player.gainLife();
         }
         topping.delete();
-        console.log(this.scores) 
+        // console.log(this.scores) 
       };
+      
+      if(this.player.hasAll()) {
+        debugger
+        this.level++;
+        if(this.level > levelList.length) {
+
+        }
+        this.player.orderList = levelList[this.level - 1].orderList;
+        this.updateScore();
+      }
+      console.log(`level ${this.level}`)
     }.bind(this));
   };
 };
-
-
+  
+  
 Game.prototype.start = function() {
-  function loop() {
-    
+  function loop() {    
+    this.orderList = this.player.orderList;
     // update variables
     this._updateGame();
     // clear canvas
@@ -84,13 +100,6 @@ Game.prototype.start = function() {
     if(this.player.isDead()){
       this.endGame();
     };
-
-    if(this.level === 1) {
-      debugger;
-      this.setLevel(1);
-    }
-
-
   };
   this.animation = window.requestAnimationFrame(loop.bind(this));
 };
