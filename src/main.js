@@ -41,7 +41,6 @@ function main() {
   
   function buildGameScreen() {
     if("ontouchstart" in document.documentElement){
-      debugger
       gameScreen = buildDom(`
       <div class="top" >
         <img src="images/title.png" alt="">
@@ -80,7 +79,8 @@ function main() {
           </article>
         </div>
       </div>
-      <canvas id="canvas" width="375" height="435"></canvas>
+    <!-- <canvas id="canvas" width="375" height="435"></canvas> -->
+      <canvas id="canvas" width="800" height="600"></canvas>
       `); 
     } else {
       gameScreen = buildDom(`

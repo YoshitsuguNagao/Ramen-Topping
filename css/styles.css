@@ -181,6 +181,12 @@ h1 {
   }
 }
 
+@media (min-height: 700px) {
+  #canvas {
+    width: 100%;
+  }
+}
+
 
 .game-over {
   /* display: flex;
