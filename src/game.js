@@ -1,6 +1,6 @@
 'use strict';
 
-function Game(canvas, endGame, updateScore, score ) {
+function Game(canvas, endGame, updateScore, setLevel,score ) {
   this.ctx = canvas.getContext('2d');
   this.player = new Player(canvas);
   // this.ramen = {
@@ -17,6 +17,8 @@ function Game(canvas, endGame, updateScore, score ) {
   this.isGameOver = false;
   this.endGame = endGame;
   this.updateScore = updateScore;
+  this.setLevel = setLevel;
+  this.level = 1;
   
   this._clearCanvas = function() {
     this.ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -82,6 +84,11 @@ Game.prototype.start = function() {
     if(this.player.isDead()){
       this.endGame();
     };
+
+    if(this.level === 1) {
+      debugger;
+      this.setLevel(1);
+    }
 
 
   };

@@ -182,7 +182,7 @@ function main() {
 
   function startGame() {
     var canvas = document.getElementById('canvas');
-    var game = new Game(canvas, endGame, updateScore);
+    var game = new Game(canvas, endGame, updateScore, setLevel);
     var onKeyDown = function (event) {
       switch(event.keyCode) {
         case 37: game.keyLeft(); break;
@@ -217,6 +217,15 @@ function main() {
         changeDisplay(toppingList[i].class,this.scores[i]);
       };
       changeDisplay(toppingList[5].class,this.scores[5] - this.scores[6] + 3)
+    }
+
+    function setLevel(level) {
+      debugger
+      for(var i = 0; i < 5; i++) { 
+        if(levelList[level-1].orderList[i] > 0) {
+          changeDisplay(toppingList[i].class,levelList[level-1].orderList[i])
+        }
+      }
     }
   };
 
