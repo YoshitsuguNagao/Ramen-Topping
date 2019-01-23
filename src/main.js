@@ -166,7 +166,6 @@ function main() {
       <a id="home-btn" class="button">Home</a>
     </div>
     `);
-    debugger
     winScreen.classList.add("win-screen");
     winScreen
       .querySelector("#home-btn")
@@ -180,7 +179,6 @@ function main() {
   };
   
   function clickStart() {
-    debugger
     destroySplashScreen();
     buildGameScreen();
     startGame();

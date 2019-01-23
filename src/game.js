@@ -96,6 +96,22 @@ Game.prototype.start = function() {
       }
       this.player.orderList = levelList[this.level - 1].orderList.concat();
       this.updateScore();
+      
+    // var levelUpImage = new Image();
+    // levelUpImage.src = 'images/level-up.png';
+    // this.ctx.drawImage(levelUpImage, 50, 200, 700, 130);
+
+    var norenImage = new Image();
+    norenImage.src = 'images/levelup.png';
+    this.ctx.drawImage(norenImage, 50, 200, 700, 130);
+
+    setTimeout(function() {
+      this._clearCanvas();
+      this.animation = window.requestAnimationFrame(loop.bind(this));
+
+    }.bind(this), 1000);
+    window.cancelAnimationFrame(this.animation); 
+
     }
   };
   this.animation = window.requestAnimationFrame(loop.bind(this));
