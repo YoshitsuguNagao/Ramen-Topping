@@ -353,7 +353,14 @@ function main() {
       var total = this.scores.reduce(function(accu, score) {
         return accu + score; 
       })
-      changeDisplay(".score",total - this.scores[5]);
+      total = total - this.scores[6];
+      debugger
+      var highScore = localStorage.getItem('highScore');
+      if(highScore < total) {
+        highScore = total;
+        localStorage.setItem(`highScore`,highScore);
+      }
+      changeDisplay(".score",total);
       if(this.level <= levelList.length) {
         changeDisplay(".level",this.level);
       }
@@ -363,7 +370,9 @@ function main() {
       var total = this.scores.reduce(function(accu, score) {
         return accu + score; 
       })
-      changeDisplay(".score",total - this.scores[5] - this.scores[6]);
+      total = total - this.scores[6];
+
+      changeDisplay(".score",total);
       if(this.level <= levelList.length) {
         changeDisplay(".level",this.level);
         for(var i = 0; i < 5; i++) { 
