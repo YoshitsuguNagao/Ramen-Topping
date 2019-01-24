@@ -61,23 +61,23 @@ h1 {
 }
 
 
-.splash {
+.splash-screen {
   height:80vh;
 }
 
 @media (max-width: 450px) {
-  .splash {
+  .splash-screen {
     width:80vw;
     height:100vh;
   }
 }
 
-.splash img {
+.title-img {
   width:75%;
   height:auto;
 }
 
-.title-img {
+.title-container {
   height:50%;
   padding: 5%;
   align-items: center;
@@ -86,7 +86,7 @@ h1 {
 }
 
 @media (max-width: 450px) {
-  .title-img {
+  .title-container {
     height:30%;
   }
 }
@@ -220,6 +220,8 @@ h1 {
 .arrow {
   width:75px;
   height: 100%;
+  -webkit-user-select:none;
+  -webkit-touch-callout:none;
 }
 
 
@@ -271,4 +273,18 @@ h1 {
 .win-screen img {
   width:50%;
   margin-top: 10%;
+}
+
+.topping-list {
+  display: flex;
+  justify-content: center;
+}
+
+.topping-list img{
+  height:30px;
+}
+
+.rule-screen p {
+  font-size: 1.5rem;
+  margin: 0.5rem;
 }

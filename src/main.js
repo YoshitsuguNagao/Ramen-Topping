@@ -20,22 +20,22 @@ function main() {
 
   function buildSplashScreen() {
     splachScreen = buildDom(`
-    <div class="title-img">
-      <img src="images/title.png" title="title"> 
+    <div class="title-container">
+      <img src="images/title.png" title="title" class="title-img"> 
     </div>
     <div class="btn-container">
       <a id="start-btn" class="button">Start</a>
       <a id="rule-btn" class="button">Rule</a>
     </div>
     `);
-    splachScreen.classList.add("splash");
+    splachScreen.classList.add("splash-screen");
     splachScreen
       .querySelector("#start-btn")
       .addEventListener("click",clickStart);
   };
 
   function destroySplashScreen() {
-    splachScreen.classList.remove("splash");
+    splachScreen.classList.remove("splash-screen");
     destroyDom(splachScreen);
   };
   
