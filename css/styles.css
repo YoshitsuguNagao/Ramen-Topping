@@ -295,10 +295,32 @@ h1 {
 }
 
 .topping-list img{
-  height:30px;
+  height:40px;
 }
 
 .rule-screen p {
   font-size: 1.5rem;
   margin: 0.5rem;
+}
+
+@media (max-width: 450px) {
+  .rule-screen p {
+    font-size: 1.0rem;
+  }
+}
+
+.title-rule {
+  width:40%;
+  height:auto;
+}
+
+
+.arrow-icon {
+  font-family: fontawesome;
+  font-size: 5rem;
+  font-style: normal;
+}
+
+.arrow {
+  width: 20%;
 }

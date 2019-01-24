@@ -21,8 +21,10 @@ function Game(canvas, endGame, updateScore, setLevel,score ) {
   this.setLevel = setLevel;
   this.level = 1;
   this.delisious = new Audio('audios/DELICIOUS.mp3');
-  this.sweet = new Audio('audios/SWEET.mp3');
   this.tasty = new Audio('audios/TASTY.mp3');
+  
+  this.sweet = new Audio('audios/SWEET.mp3');
+
   
   this._clearCanvas = function() {
     this.ctx.clearRect(0, 0, canvas.width, canvas.height);

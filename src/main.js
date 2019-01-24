@@ -81,14 +81,21 @@ function main() {
       </div>
       <canvas id="canvas" width="800" height="600"></canvas>
       <div class="arrow-container">
-        <div id="touch" class="arrow">
-        <p>&nbsp;</p>
-        </div>
+      <div id="left" class="arrow">
+        <i class="fa-caret-left arrow-icon"></i>        
       </div>
+      <div id="right" class="arrow">
+        <i class="fa-caret-right arrow-icon"></i>
+      </div>
+    </div>
+
       `); 
     } else {
       gameScreen = buildDom(`
       <div class="top" >
+      <!--  <audio id="backgroundMusic" controls loop autoplay style="display:none">
+          <source src="./audios/SWEET.mp3" type="audio/ogg">
+        </audio> -->
         <img src="images/title.png" alt="">
         <div class="score-box">
           <article>
@@ -226,22 +233,22 @@ function main() {
     document.addEventListener('keydown', onKeyDown);
 
     if("ontouchstart" in document.documentElement){
-      // document.getElementById( "right" ).ontouchstart = function(event) {
-      //   event.stopPropagation();
-      //   game.keyRight();
-      // }
+      document.getElementById( "right" ).ontouchstart = function(event) {
+        event.stopPropagation();
+        game.keyRight();
+      }
 
-      // document.getElementById( "left" ).ontouchstart = function(event) {
-      //   event.stopPropagation();
-      //   game.keyLeft();
-      // }
-      document.getElementById('touch').addEventListener('touchstart', function(event) {
-        if(event.touches[0].clientX < window.screen.width/ 2) {
-          game.keyLeft();
-        } else {
-          game.keyRight();
-        }
-      });
+      document.getElementById( "left" ).ontouchstart = function(event) {
+        event.stopPropagation();
+        game.keyLeft();
+      }
+      // document.getElementById('touch').addEventListener('touchstart', function(event) {
+      //   if(event.touches[0].clientX < window.screen.width/ 2) {
+      //     game.keyLeft();
+      //   } else {
+      //     game.keyRight();
+      //   }
+      // });
     }
     
     //Start the game
