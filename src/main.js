@@ -236,8 +236,8 @@ function main() {
       //   game.keyLeft();
       // }
       document.getElementById('touch').ontouchstart = function(event) {
-        console.log(event.targetTouches[0].clientX)
-        if(event.targetTouches[0].clientX < event.targetTouches[0].screenX / 2) {
+        console.log(event)
+        if(event.touches[0].clientX < event.touches[0].screenX / 2) {
           game.keyLeft();
         } else {
           game.keyRight();
