@@ -82,11 +82,8 @@ function main() {
     <!-- <canvas id="canvas" width="375" height="435"></canvas> -->
       <canvas id="canvas" width="800" height="600"></canvas>
       <div class="arrow-container">
-        <div id="left" class="arrow">
-          <img src="images/arrow.svg" alt="" class="arrow-icon rotate">
-        </div>
-        <div id="right" class="arrow">
-          <img src="images/arrow.svg" alt="" class="arrow-icon">
+        <div id="touch" class="arrow">
+        <p>&nbsp;</p>
         </div>
       </div>
       `); 
@@ -229,14 +226,22 @@ function main() {
     document.addEventListener('keydown', onKeyDown);
 
     if("ontouchstart" in document.documentElement){
-      document.getElementById( "right" ).ontouchstart = function(event) {
-        event.stopPropagation();
-        game.keyRight();
-      }
+      // document.getElementById( "right" ).ontouchstart = function(event) {
+      //   event.stopPropagation();
+      //   game.keyRight();
+      // }
 
-      document.getElementById( "left" ).ontouchstart = function(event) {
-        event.stopPropagation();
-        game.keyLeft();
+      // document.getElementById( "left" ).ontouchstart = function(event) {
+      //   event.stopPropagation();
+      //   game.keyLeft();
+      // }
+      document.getElementById('touch').ontouchstart = function(event) {
+        console.log(event.targetTouches[0].clientX)
+        if(event.targetTouches[0].clientX < event.targetTouches[0].screenX / 2) {
+          game.keyLeft();
+        } else {
+          game.keyRight();
+        }
       }
     }
     
