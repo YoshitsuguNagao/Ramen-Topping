@@ -200,7 +200,6 @@ function main() {
 
   function clickContinue() {
     destroyGameOverScreen();
-    destroyWinScreen();
     buildGameScreen();  
     startGame();
   };
@@ -271,7 +270,7 @@ function main() {
     }
   };
 
-  // buildSplashScreen();
+  buildSplashScreen();
 };
 
 window.addEventListener('load',main);
