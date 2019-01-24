@@ -168,7 +168,7 @@ function main() {
 
   function buildWinScreen() {
     winScreen = buildDom(`
-    <h1>WIN</h1>
+    <img src="images/win.png" alt="">
     <h2>Score: <span class="score">X</span></h2>
     <div class="btn-container">
       <a id="home-btn" class="button">Home</a>

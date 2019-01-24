@@ -231,6 +231,13 @@ h1 {
   height:80vh;
 }
 
+
+@media (max-width: 450px) {
+  .game-over {
+    height:100vh;
+  }
+}
+
 .game-over img {
   width:50%;
   margin-top: 10%;
@@ -246,7 +253,22 @@ h1 {
   margin: 1rem;
 }
 
+
+.win-screen {
+  height:80vh;
+}
+
+@media (max-width: 450px) {
+  .win-screen {
+    height:100vh;
+  }
+}
+
 .rotate {
   transform: rotate(180deg);
 }
 
+.win-screen img {
+  width:50%;
+  margin-top: 10%;
+}
