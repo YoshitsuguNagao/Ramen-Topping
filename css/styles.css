@@ -239,6 +239,21 @@ h1 {
   }
 }
 
+#one-line {
+  display: none;
+}
+
+@media (max-height: 800px) {
+  #one-line {
+    display: inline;
+  }
+  #two-line {
+    display: none;
+  }
+}
+
+
+
 .game-over img {
   width:50%;
   margin-top: 10%;

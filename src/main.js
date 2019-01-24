@@ -79,7 +79,6 @@ function main() {
           </article>
         </div>
       </div>
-    <!-- <canvas id="canvas" width="375" height="435"></canvas> -->
       <canvas id="canvas" width="800" height="600"></canvas>
       <div class="arrow-container">
         <div id="touch" class="arrow">
@@ -139,7 +138,8 @@ function main() {
 
   function buildGameOverScreen() {
     gameOverScreen = buildDom(`
-    <img src="images/gameover.png" alt="">
+    <img src="images/gameover2.png" alt="" id="two-line">
+    <img src="images/gameover.png" alt="" id="one-line">
     <h2>Score: <span class="score">X</span></h2>
     <h2>Level: <span class="level">X</span></h2>
     <div class="btn-container">
@@ -236,10 +236,7 @@ function main() {
       //   game.keyLeft();
       // }
       document.getElementById('touch').addEventListener('touchstart', function(event) {
-        // console.log(event.touches[0].clientX)
-        console.log(window.screen.width/ 2)
         if(event.touches[0].clientX < window.screen.width/ 2) {
-        // if(event.touches[0].clientX < event.touches[0].screenX / 2) {
           game.keyLeft();
         } else {
           game.keyRight();
