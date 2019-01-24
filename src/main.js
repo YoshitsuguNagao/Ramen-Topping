@@ -154,6 +154,7 @@ function main() {
     <img src="images/gameover.png" alt="" id="one-line">
     <h2>Score: <span class="score">X</span></h2>
     <h2>Level: <span class="level">X</span></h2>
+    <h2>High Score: <span class="high-score">X</span></h2>
     <div class="btn-container">
       <a id="continue-btn" class="button">Continue</a>
       <a id="home-btn" class="button">Home</a>
@@ -179,6 +180,7 @@ function main() {
     winScreen = buildDom(`
     <img src="images/win.png" alt="">
     <h2>Score: <span class="score">X</span></h2>
+    <h2>High Score: <span class="high-score">X</span></h2>
     <div class="btn-container">
       <a id="home-btn" class="button">Home</a>
     </div>
@@ -354,15 +356,16 @@ function main() {
         return accu + score; 
       })
       total = total - this.scores[6];
-      debugger
       var highScore = localStorage.getItem('highScore');
       if(highScore < total) {
         highScore = total;
         localStorage.setItem(`highScore`,highScore);
       }
       changeDisplay(".score",total);
+      changeDisplay(".high-score",highScore);
       if(this.level <= levelList.length) {
-        changeDisplay(".level",this.level);
+      changeDisplay(".high-score",highScore);
+      changeDisplay(".level",this.level);
       }
     };
 
