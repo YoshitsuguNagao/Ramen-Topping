@@ -230,10 +230,12 @@ function main() {
 
     if("ontouchstart" in document.documentElement){
       document.getElementById( "right" ).ontouchstart = function(event) {
+        event.stopPropagation();
         game.keyRight();
       }
 
       document.getElementById( "left" ).ontouchstart = function(event) {
+        event.stopPropagation();
         game.keyLeft();
       }
     }
