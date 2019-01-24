@@ -235,14 +235,14 @@ function main() {
       //   event.stopPropagation();
       //   game.keyLeft();
       // }
-      document.getElementById('touch').ontouchstart = function(event) {
+      document.getElementById('touch').addEventListener('touchstart', function(event) {
         console.log(event)
         if(event.touches[0].clientX < event.touches[0].screenX / 2) {
           game.keyLeft();
         } else {
           game.keyRight();
         }
-      }
+      });
     }
     
     //Start the game
