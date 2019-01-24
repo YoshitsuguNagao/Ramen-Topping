@@ -271,7 +271,7 @@ function main() {
     }
   };
 
-  buildSplashScreen();
+  // buildSplashScreen();
 };
 
 window.addEventListener('load',main);
