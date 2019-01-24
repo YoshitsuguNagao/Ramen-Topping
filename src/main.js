@@ -237,8 +237,8 @@ function main() {
       // }
       document.getElementById('touch').addEventListener('touchstart', function(event) {
         // console.log(event.touches[0].clientX)
-        // console.log(event.touches[0].screenX / 2)
-        if(event.touches[0].clientX < 170) {
+        console.log(window.screen.width/ 2)
+        if(event.touches[0].clientX < window.screen.width/ 2) {
         // if(event.touches[0].clientX < event.touches[0].screenX / 2) {
           game.keyLeft();
         } else {
