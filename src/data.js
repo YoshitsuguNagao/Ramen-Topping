@@ -94,6 +94,10 @@ var toppingList = [
 var levelList = [
   {
     level: 1,
-    orderList: [10, 10, 10, 10, 10, -1, -1],
+    orderList: [1, 0, 0, 0, 0, -1, -1],
+  },
+  {
+    level: 2,
+    orderList: [1, 0, 0, 0, 0, -1, -1],
   },
 ];

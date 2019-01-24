@@ -82,8 +82,12 @@ function main() {
     <!-- <canvas id="canvas" width="375" height="435"></canvas> -->
       <canvas id="canvas" width="800" height="600"></canvas>
       <div class="arrow-container">
-      <div id="left" class="arrow"></div>
-      <div id="right" class="arrow"></div>
+        <div id="left" class="arrow">
+          <img src="images/arrow.svg" alt="" class="arrow-icon rotate">
+        </div>
+        <div id="right" class="arrow">
+          <img src="images/arrow.svg" alt="" class="arrow-icon">
+        </div>
       </div>
       `); 
     } else {
@@ -224,14 +228,15 @@ function main() {
     //Add event lisner
     document.addEventListener('keydown', onKeyDown);
 
-    document.getElementById( "right" ).ontouchstart = function(event) {
-      game.keyRight();
-    }
+    if("ontouchstart" in document.documentElement){
+      document.getElementById( "right" ).ontouchstart = function(event) {
+        game.keyRight();
+      }
 
-    document.getElementById( "left" ).ontouchstart = function(event) {
-      game.keyLeft();
+      document.getElementById( "left" ).ontouchstart = function(event) {
+        game.keyLeft();
+      }
     }
-    
     
     //Start the game
     game.start();
@@ -248,7 +253,9 @@ function main() {
         return accu + score; 
       })
       changeDisplay(".score",total - this.scores[5]);
-      changeDisplay(".level",this.level);
+      if(this.level <= levelList.length) {
+        changeDisplay(".level",this.level);
+      }
     };
 
     function updateScore() {
@@ -256,16 +263,20 @@ function main() {
         return accu + score; 
       })
       changeDisplay(".score",total - this.scores[5] - this.scores[6]);
-      changeDisplay(".level",this.level);
-      for(var i = 0; i < 5; i++) { 
-        changeDisplay(toppingList[i].class,this.orderList[i]);
-      };
-      changeDisplay(toppingList[5].class,this.scores[5] - this.scores[6] + 3)
+      if(this.level <= levelList.length) {
+        changeDisplay(".level",this.level);
+        for(var i = 0; i < 5; i++) { 
+          changeDisplay(toppingList[i].class,this.orderList[i]);
+        };
+        changeDisplay(toppingList[5].class,this.scores[5] - this.scores[6] + 3)
+      }
     }
 
     function setLevel(level) {
-      for(var i = 0; i < 5; i++) { 
-          changeDisplay(toppingList[i].class,this.orderList[i])
+      if(this.level <= levelList.length) {
+        for(var i = 0; i < 5; i++) { 
+            changeDisplay(toppingList[i].class,this.orderList[i])
+        }
       }
     }
   };

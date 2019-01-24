@@ -46,7 +46,7 @@ body {
 
 @media (max-width: 450px) {
   .container {  
-    width:100vw;
+    /* width:100vw; */
     border-radius: 0;
     height: 100vh;
   }
@@ -65,6 +65,13 @@ h1 {
   height:80vh;
 }
 
+@media (max-width: 450px) {
+  .splash {
+    width:80vw;
+    height:100vh;
+  }
+}
+
 .splash img {
   width:75%;
   height:auto;
@@ -76,6 +83,12 @@ h1 {
   align-items: center;
   display: flex;
   justify-content: center;
+}
+
+@media (max-width: 450px) {
+  .title-img {
+    height:30%;
+  }
 }
 
 .button {
@@ -103,7 +116,13 @@ h1 {
   justify-content: center;
 }
 
-.game-screen {
+
+@media (max-width: 450px) {
+  .game-screen {
+  /* height:80vh; */
+    width:100vw;
+    
+  }
 }
 
 .top {
@@ -209,6 +228,7 @@ h1 {
   justify-content: center;
   align-items: center;
   flex-direction: column; */
+  height:80vh;
 }
 
 .game-over img {

@@ -101,24 +101,20 @@ Game.prototype.start = function() {
       if(this.level > levelList.length) {
     　   this.endGame();
       }
-      this.player.orderList = levelList[this.level - 1].orderList.concat();
-      this.updateScore();
-      
-    // var levelUpImage = new Image();
-    // levelUpImage.src = 'images/level-up.png';
-    // this.ctx.drawImage(levelUpImage, 50, 200, 700, 130);
+      if(this.level <= levelList.length) {
+        this.player.orderList = levelList[this.level - 1].orderList.concat();
+        this.updateScore();
+        var levelUpImage = new Image();
+        levelUpImage.src = 'images/levelup.png';
+        this.ctx.drawImage(levelUpImage, 50, 200, 700, 130);
 
-    var norenImage = new Image();
-    norenImage.src = 'images/levelup.png';
-    this.ctx.drawImage(norenImage, 50, 200, 700, 130);
+        setTimeout(function() {
+          this._clearCanvas();
+          this.animation = window.requestAnimationFrame(loop.bind(this));
 
-    setTimeout(function() {
-      this._clearCanvas();
-      this.animation = window.requestAnimationFrame(loop.bind(this));
-
-    }.bind(this), 1000);
-    window.cancelAnimationFrame(this.animation); 
-
+        }.bind(this), 1000);
+        window.cancelAnimationFrame(this.animation); 
+      }
     }
   };
   this.animation = window.requestAnimationFrame(loop.bind(this));
