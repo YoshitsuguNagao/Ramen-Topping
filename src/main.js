@@ -5,6 +5,7 @@ function main() {
   var gameScreen;
   var gameOverScreen;
   var winScreen;
+  var ruleScreen;
 
 // --- States and Transitions --- //
 
@@ -32,6 +33,10 @@ function main() {
     splachScreen
       .querySelector("#start-btn")
       .addEventListener("click",clickStart);
+
+    splachScreen
+      .querySelector("#rule-btn")
+      .addEventListener("click",clickRule);
   };
 
   function destroySplashScreen() {
@@ -189,6 +194,73 @@ function main() {
     winScreen.classList.remove("win-screen");
     destroyDom(winScreen);
   };
+
+
+  function buildRuleScreen() {
+    ruleScreen = buildDom(`
+    <div class="title-container-rule">
+      <img src="images/title.png" title="title" class="title-rule"> 
+    </div>
+    <h3>Items</h3>
+    <div>
+      <article>
+        <p>Toppings. Get toppings that you are ordered!</p>
+        <div class="topping-list">
+          <article class="topping-order">
+            <img src="images/egg.png" alt="egg" id="egg">
+          </article>
+          <article class="topping-order">
+            <img src="images/naruto.png" alt="naruto" id="naruto">
+          </article>
+          <article class="topping-order">
+            <img src="images/chasyu.png" alt="chasyu" id="chasyu">
+          </article>
+          <article class="topping-order">
+            <img src="images/nori.png" alt="nori" id="nori">
+          </article>
+          <article class="topping-order">
+            <img src="images/negi.png" alt="negi" id="negi">
+          </article>
+        </div>
+      </article>
+      <article>
+        <p>Not Topping. Avoid tometo!</p>
+        <div class="topping-list">
+          <article class="topping-order">
+            <img src="images/tomato.png" alt="tomato" id="tomato">
+          </article>
+        </div>
+      </article>
+      <article>
+        <p>Extra noodle. Number of extra noodle is your lives</p>
+        <div class="topping-list">
+          <article class="topping-order">
+            <img src="images/extra-noodle.png" alt="noodle" id="noodle">
+          </article>
+        </div>
+      </article>
+    </div>
+    <h3>Order list</h3>
+    <div class="menu">
+      <img src="images/menu.png" title="menu" class="menu-icon">   
+      <p>You have to get those toppings to go to the next level!!</p>
+    </div>
+    <div class="btn-container">
+      <a id="home-btn" class="button">Home</a>
+    </div>
+    `);
+    ruleScreen.classList.add("rule-screen");
+    ruleScreen
+      .querySelector("#home-btn")
+      .addEventListener("click",clickHomeFronRule);
+    
+  };
+  
+  function destroyRuleScreen() {
+    ruleScreen.classList.remove("rule-screen");
+    destroyDom(ruleScreen);
+  };
+
   
   function clickStart() {
     destroySplashScreen();
@@ -204,6 +276,22 @@ function main() {
   function clickHomeFronWin() {
     destroyWinScreen();
     buildSplashScreen();
+  };
+
+
+  function clickHomeFronWin() {
+    destroyWinScreen();
+    buildSplashScreen();
+  };
+
+  function clickHomeFronRule() {
+    destroyRuleScreen();
+    buildSplashScreen();
+  };
+
+  function clickRule() {
+    destroySplashScreen();
+    buildRuleScreen();
   };
 
   function clickContinue() {

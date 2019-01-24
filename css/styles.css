@@ -60,6 +60,10 @@ h1 {
   font-size: 8rem;
 }
 
+.rule-screen h3 {
+  font-size: 1.5rem;
+  margin: 5px;
+}
 
 .splash-screen {
   height:80vh;
@@ -116,6 +120,12 @@ h1 {
   justify-content: center;
 }
 
+
+@media (max-height: 750px) {
+  .btn-container {
+    margin-top: 0;
+  }
+}
 
 @media (max-width: 450px) {
   .game-screen {
@@ -298,6 +308,12 @@ h1 {
   height:40px;
 }
 
+@media (max-width: 450px) {
+  .topping-list img {
+    height: 25px;
+  }
+}
+
 .rule-screen p {
   font-size: 1.5rem;
   margin: 0.5rem;
@@ -314,6 +330,12 @@ h1 {
   height:auto;
 }
 
+@media (max-width: 450px) {
+  .title-rule {
+    width:50%;
+    height:auto;
+  }
+}
 
 .arrow-icon {
   font-family: fontawesome;
@@ -324,3 +346,55 @@ h1 {
 .arrow {
   width: 20%;
 }
+
+.title-container-rule {
+  height:50%;
+  padding: 5%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 450px) {
+  .title-container-rule {
+    height:15%;
+  }
+}
+
+.menu-icon {
+  width: 50%;
+}
+
+@media (max-height: 800px) {
+  .menu-icon {
+    width: 30%;
+  }
+}
+
+
+@media (max-height: 750px) {
+  .title-container-rule {
+    padding: 3%;
+  }
+}
+
+@media (max-height: 750px) {
+  .topping-list img {
+    height: 25px;
+  }
+}
+
+
+@media (max-height: 750px) {
+  .rule-screen p {
+    font-size: 1.0rem;
+  }
+}
+
+
+@media (max-height: 750px) {
+  .rule-screen p {
+    font-size: 1.0rem;
+  }
+}
+
