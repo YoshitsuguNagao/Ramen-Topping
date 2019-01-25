@@ -226,7 +226,7 @@ function main() {
         </div>
       </article>
       <article>
-        <p>Not Topping. Avoid tometo!</p>
+        <p>Not Topping. Avoid tomato!</p>
         <div class="topping-list">
           <article class="topping-order">
             <img src="images/tomato.png" alt="tomato" id="tomato">

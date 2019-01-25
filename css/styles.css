@@ -162,12 +162,17 @@ h1 {
   width: 250px;
 }
 
-@media (max-width: 959px) {
+@media (max-width: 960px) {
   .order-box {  
     width: 500px;
   }
 }
 
+@media (max-width: 580px) {
+  .order-box {
+      width: 250px;
+  }
+}
 
 .order-box p {
   margin: 0;
