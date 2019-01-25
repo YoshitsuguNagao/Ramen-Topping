@@ -381,14 +381,14 @@ function main() {
         for(var i = 0; i < 5; i++) { 
           changeDisplay(toppingList[i].class,this.orderList[i]);
         };
-        changeDisplay(toppingList[5].class,this.scores[5] - this.scores[6] + 3)
+        changeDisplay(toppingList[5].class,this.scores[5] - this.scores[6] + 3);
       }
     }
 
     function setLevel(level) {
       if(this.level <= levelList.length) {
         for(var i = 0; i < 5; i++) { 
-            changeDisplay(toppingList[i].class,this.orderList[i])
+            changeDisplay(toppingList[i].class,this.orderList[i]);
         }
       }
     }

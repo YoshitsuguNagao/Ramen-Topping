@@ -1,17 +1,11 @@
 'use strict';
 
-function Game(canvas, endGame, updateScore, setLevel,score ) {
+function Game(canvas, endGame, updateScore, setLevel, score) {
   this.ctx = canvas.getContext('2d');
   this.player = new Player(canvas);
-  // this.ramen = {
-  //   type:"yyy",
-  //   ingredient:["xxx","xxx"]
-  //  };
   this.toppings = [];
   this.scores = new Array(toppingList.length).fill(0);
   this.orderList;
-  // this.orderList;
-  // this.gameEndedHandler;
   this.type;
   this.isTopping;
   this.animation;
@@ -22,9 +16,6 @@ function Game(canvas, endGame, updateScore, setLevel,score ) {
   this.level = 1;
   this.delisious = new Audio('audios/DELICIOUS.mp3');
   this.tasty = new Audio('audios/TASTY.mp3');
-  
-  this.sweet = new Audio('audios/SWEET.mp3');
-
   
   this._clearCanvas = function() {
     this.ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -77,7 +68,6 @@ function Game(canvas, endGame, updateScore, setLevel,score ) {
           this.delisious.play();
         }
       };
-      console.log(`level ${this.level}`);
     }.bind(this));
   };
 };

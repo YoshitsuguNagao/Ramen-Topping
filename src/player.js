@@ -23,12 +23,10 @@ Player.prototype.isCollided = function(topping) {
   var collidesLeft = this.x < topping.x + topping.size;
   var collidesTop = this.y  < topping.y + topping.size;
   var collideBottom = this.y + this.height > topping.y;
-
   return collidesRight && collidesLeft && collidesTop && collideBottom;
-}
+};
 
 Player.prototype.draw = function() {
-  // this.ctx.fillRect(this.x, this.y, this.width, this.height);
   var bowlImage = new Image();
   bowlImage.src = 'images/shoyu.png';
   this.ctx.drawImage(bowlImage, this.x, this.y, this.width, this.height);
@@ -45,12 +43,10 @@ Player.prototype.update = function() {
 
 Player.prototype.loseLife = function() {
   this.lives--;
-  console.log(`Player lives: ${this.lives}`);
 };
 
 Player.prototype.gainLife = function() {
   this.lives++;
-  console.log(`Player lives: ${this.lives}`);
 };
 
 Player.prototype.isDead = function() {
@@ -58,9 +54,7 @@ Player.prototype.isDead = function() {
 };
 
 Player.prototype.levelUp = function() {
-
   this.level++;
-  console.log(`Level up: ${this.level}`);
 };
 
 Player.prototype.getTopping = function(type) {
@@ -75,8 +69,4 @@ Player.prototype.hasAll = function() {
     total += this.orderList[i];
   }
   return total === 0;
-};
-
-Player.prototype.hasCollidedWithTrueTopping = function() {
-
 };
