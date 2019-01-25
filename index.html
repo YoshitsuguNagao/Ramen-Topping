@@ -13,7 +13,6 @@
     canvas {
       border: 1px solid black;
     }
-
   </style>
 </head>
 
@@ -28,8 +27,8 @@
       <a id="rule-btn" class="button">Rule</a>
     </div> -->
 
-    <!-- Game Screen -->
-    <!-- <div class="top" >
+    <!-- Game Screen for touch screen -->
+    <!-- <div class="top">
       <img src="images/title.png" alt="">
       <div class="score-box">
         <article>
@@ -69,14 +68,14 @@
     <canvas id="canvas" width="800" height="600"></canvas>
     <div class="arrow-container">
       <div id="left" class="arrow">
-        <img src="images/arrow.svg" alt="" class="arrow-icon rotate">
+        <i class="fa-caret-left arrow-icon"></i>        
       </div>
       <div id="right" class="arrow">
-        <i class="fas fa-arrow-left"></i>
+        <i class="fa-caret-right arrow-icon"></i>
       </div>
     </div> -->
 
-
+    <!-- Game Screen for desktop screen -->
     <!-- <div class="top" >
       <img src="images/title.png" alt="">
       <div class="score-box">
@@ -114,28 +113,28 @@
         </article>
       </div>
     </div>
-    <canvas id="canvas" width="375" height="435"></canvas> -->
+    <canvas id="canvas" width="800" height="600"></canvas> -->
 
     <!-- Game Over Screen -->
     <!-- <img src="images/gameover2.png" alt="" id="two-line">
     <img src="images/gameover.png" alt="" id="one-line">
-    <h2>Level <span>X</span></h2>
-    <h2>Score <span>X</span></h2>
+    <h2>Score: <span class="score">X</span></h2>
+    <h2>Level: <span class="level">X</span></h2>
+    <h2>High Score: <span class="high-score">X</span></h2>
     <div class="btn-container">
-      <a class="button">Continue</a>
-      <a class="button">Home</a>
+      <a id="continue-btn" class="button">Continue</a>
+      <a id="home-btn" class="button">Home</a>
     </div> -->
 
     <!-- Win Screen -->
     <!-- <img src="images/win.png" alt="">
     <h2>Score: <span class="score">X</span></h2>
+    <h2>High Score: <span class="high-score">X</span></h2>
     <div class="btn-container">
       <a id="home-btn" class="button">Home</a>
     </div> -->
-    
 
     <!-- Rule Screen -->
-    <!-- <img src="images/menu.png" title="menu" class="menu"> -->
     <!-- <div class="title-container-rule">
       <img src="images/title.png" title="title" class="title-rule"> 
     </div>
@@ -162,7 +161,7 @@
         </div>
       </article>
       <article>
-        <p>Not Topping. Avoid tometo!</p>
+        <p>Not Topping. Avoid tomato!</p>
         <div class="topping-list">
           <article class="topping-order">
             <img src="images/tomato.png" alt="tomato" id="tomato">
@@ -185,8 +184,7 @@
     </div>
     <div class="btn-container">
       <a id="home-btn" class="button">Home</a>
-    </div> -->
-    
+    </div>     -->
 
     <!-- <audio id="backgroundMusic" controls loop autoplay style="display:none">
       <source src="./audios/SWEET.mp3" type="audio/ogg">
@@ -207,14 +205,3 @@
   <script src="src/main.js"></script>
 </body>
 </html>
-
-
-
-<!-- <div class="full-screen">
-  <div id="left-side" class="half-screen">
-
-  </div>
-  <div id="right-side" class="half-screen">
-
-  </div>
-</div> -->
