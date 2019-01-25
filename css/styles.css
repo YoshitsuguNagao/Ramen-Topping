@@ -162,7 +162,7 @@ h1 {
   width: 250px;
 }
 
-@media (max-width: 906px) {
+@media (max-width: 959px) {
   .order-box {  
     width: 500px;
   }
