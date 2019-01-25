@@ -8,9 +8,7 @@ function Player(canvas, lives, orderList) {
   this.x = (canvas.width - this.width) / 2;
   this.y = 520;
   this.lives = lives || 3;
-  // this.score = 0;
   this.orderList = levelList[0].orderList.concat(); 
-  // this.type = type;
   this.direction = 0;
   this.speed = 5;
   this.level = 1;
@@ -21,7 +19,6 @@ Player.prototype.setDirection = function(direction) {
 };
 
 Player.prototype.isCollided = function(topping) {
-  // debugger
   var collidesRight = this.x + this.width > topping.x;
   var collidesLeft = this.x < topping.x + topping.size;
   var collidesTop = this.y  < topping.y + topping.size;
