@@ -166,9 +166,9 @@ Task definition in order of priority
 ### Git
 URls for the project repo and deploy
 [Link Repo](https://github.com/YoshitsuguNagao/Ramen-Topping)
-[Link Deploy](http://github.com)
+[Link Deploy](https://yoshitsugunagao.github.io/Ramen-Topping/)
 
 
 ### Slides
-URls for the project presentation (slides)
-[Link Slides.com](http://slides.com)
+URls for the project presentation 
+[Link Slides.com](https://slides.com/yoshitsugunagao/ramen-topping/)
