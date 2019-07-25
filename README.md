@@ -170,5 +170,5 @@ URls for the project repo and deploy
 
 
 ### Slides
-URls for the project presentation (https://slides.com/yoshitsugunagao/ramen-topping/)
-[Link Slides.com](http://slides.com)
+URls for the project presentation 
+[Link Slides.com](https://slides.com/yoshitsugunagao/ramen-topping/)
