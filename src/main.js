@@ -22,7 +22,7 @@ function main() {
   function buildSplashScreen() {
     splachScreen = buildDom(`
     <div class="title-container">
-      <img src="images/title.png" title="title" class="title-img"> 
+      <img src="images/title.png" title="title" class="title-img">
     </div>
     <div class="btn-container">
       <a id="start-btn" class="button">Start</a>
@@ -43,7 +43,7 @@ function main() {
     splachScreen.classList.remove("splash-screen");
     destroyDom(splachScreen);
   };
-  
+
   function buildGameScreen() {
     if("ontouchstart" in document.documentElement){
       gameScreen = buildDom(`
@@ -87,14 +87,14 @@ function main() {
       <canvas id="canvas" width="800" height="600"></canvas>
       <div class="arrow-container">
       <div id="left" class="arrow">
-        <i class="fa-caret-left arrow-icon"></i>        
+        <i class="fa-caret-left arrow-icon"></i>
       </div>
       <div id="right" class="arrow">
         <i class="fa-caret-right arrow-icon"></i>
       </div>
     </div>
 
-      `); 
+      `);
     } else {
       gameScreen = buildDom(`
       <div class="top" >
@@ -142,7 +142,7 @@ function main() {
     }
     gameScreen.classList.add("game-screen");
   };
-  
+
   function destroyGameScreen() {
     gameScreen.classList.remove("game-screen");
     destroyDom(gameScreen);
@@ -164,13 +164,13 @@ function main() {
     gameOverScreen
       .querySelector("#continue-btn")
       .addEventListener("click",clickContinue);
-    
+
     gameOverScreen
       .querySelector("#home-btn")
       .addEventListener("click",clickHomeFromGameOver);
-    
+
   };
-  
+
   function destroyGameOverScreen() {
     gameOverScreen.classList.remove("game-over");
     destroyDom(gameOverScreen);
@@ -189,9 +189,9 @@ function main() {
     winScreen
       .querySelector("#home-btn")
       .addEventListener("click",clickHomeFronWin);
-    
+
   };
-  
+
   function destroyWinScreen() {
     winScreen.classList.remove("win-screen");
     destroyDom(winScreen);
@@ -201,7 +201,7 @@ function main() {
   function buildRuleScreen() {
     ruleScreen = buildDom(`
     <div class="title-container-rule">
-      <img src="images/title.png" title="title" class="title-rule"> 
+      <img src="images/title.png" title="title" class="title-rule">
     </div>
     <h3>Items</h3>
     <div>
@@ -244,7 +244,7 @@ function main() {
     </div>
     <h3>Order list</h3>
     <div class="menu">
-      <img src="images/menu.png" title="menu" class="menu-icon">   
+      <img src="images/menu.png" title="menu" class="menu-icon">
       <p>You have to get those toppings to go to the next level!!</p>
     </div>
     <div class="btn-container">
@@ -255,21 +255,20 @@ function main() {
     ruleScreen
       .querySelector("#home-btn")
       .addEventListener("click",clickHomeFronRule);
-    
+
   };
-  
+
   function destroyRuleScreen() {
     ruleScreen.classList.remove("rule-screen");
     destroyDom(ruleScreen);
   };
 
-  
   function clickStart() {
     destroySplashScreen();
     buildGameScreen();
     startGame();
   }
-  
+
   function clickHomeFromGameOver() {
     destroyGameOverScreen();
     buildSplashScreen();
@@ -298,10 +297,10 @@ function main() {
 
   function clickContinue() {
     destroyGameOverScreen();
-    buildGameScreen();  
+    buildGameScreen();
     startGame();
   };
-  
+
   function changeDisplay(id, value) {
     var target = document.querySelector(id);
     target.innerText = value;
@@ -340,7 +339,7 @@ function main() {
       //   }
       // });
     }
-    
+
     //Start the game
     game.start();
 
@@ -353,7 +352,7 @@ function main() {
         buildGameOverScreen();
       }
       var total = this.scores.reduce(function(accu, score) {
-        return accu + score; 
+        return accu + score;
       })
       total = total - this.scores[6];
       var highScore = localStorage.getItem('highScore');
@@ -371,14 +370,14 @@ function main() {
 
     function updateScore() {
       var total = this.scores.reduce(function(accu, score) {
-        return accu + score; 
+        return accu + score;
       })
       total = total - this.scores[6];
 
       changeDisplay(".score",total);
       if(this.level <= levelList.length) {
         changeDisplay(".level",this.level);
-        for(var i = 0; i < 5; i++) { 
+        for(var i = 0; i < 5; i++) {
           changeDisplay(toppingList[i].class,this.orderList[i]);
         };
         changeDisplay(toppingList[5].class,this.scores[5] - this.scores[6] + 3);
@@ -387,7 +386,7 @@ function main() {
 
     function setLevel(level) {
       if(this.level <= levelList.length) {
-        for(var i = 0; i < 5; i++) { 
+        for(var i = 0; i < 5; i++) {
             changeDisplay(toppingList[i].class,this.orderList[i]);
         }
       }

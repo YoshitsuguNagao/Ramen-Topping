@@ -45,7 +45,7 @@ body {
 }
 
 @media (max-width: 450px) {
-  .container {  
+  .container {
     /* width:100vw; */
     border-radius: 0;
     height: 100vh;
@@ -131,7 +131,6 @@ h1 {
   .game-screen {
   /* height:80vh; */
     width:100vw;
-    
   }
 }
 
@@ -151,19 +150,19 @@ h1 {
 
 
 @media (max-width: 450px) {
-  .top img {  
+  .top img {
     height: 65px;
   }
 }
 
 .order-box {
   display: flex;
-  flex-wrap: wrap;    
+  flex-wrap: wrap;
   width: 250px;
 }
 
 @media (max-width: 960px) {
-  .order-box {  
+  .order-box {
     width: 500px;
   }
 }
@@ -283,7 +282,7 @@ h1 {
   margin-top: 10%;
 }
 
-.game-over h2 {    
+.game-over h2 {
   font-size: 2rem;
   margin: 1rem;
 }

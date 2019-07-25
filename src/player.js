@@ -8,7 +8,7 @@ function Player(canvas, lives, orderList) {
   this.x = (canvas.width - this.width) / 2;
   this.y = 520;
   this.lives = lives || 3;
-  this.orderList = levelList[0].orderList.concat(); 
+  this.orderList = levelList[0].orderList.concat();
   this.direction = 0;
   this.speed = 5;
   this.level = 1;
@@ -65,7 +65,7 @@ Player.prototype.getTopping = function(type) {
 
 Player.prototype.hasAll = function() {
   var total = 0;
-  for(var i = 0; i < 5; i++) { 
+  for(var i = 0; i < 5; i++) {
     total += this.orderList[i];
   }
   return total === 0;

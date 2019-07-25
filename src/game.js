@@ -16,7 +16,7 @@ function Game(canvas, endGame, updateScore, setLevel, score) {
   this.level = 1;
   this.delisious = new Audio('audios/DELICIOUS.mp3');
   this.tasty = new Audio('audios/TASTY.mp3');
-  
+
   this._clearCanvas = function() {
     this.ctx.clearRect(0, 0, canvas.width, canvas.height);
   };
@@ -42,14 +42,14 @@ function Game(canvas, endGame, updateScore, setLevel, score) {
     this.player.update();
     this.setLevel();
     if (Math.random() > 0.95) {
-      this._createTopping();    
+      this._createTopping();
     };
     this.toppings = this.toppings.filter(function(topping) {
       return topping.isInScreen();
     });
     this.toppings.forEach(function(topping) {
       topping.update();
-      
+
       if(this.player.isCollided(topping)) {
         this.scores[topping.type] += 1;
         if(this.player.orderList[topping.type] > 0) {
@@ -73,21 +73,21 @@ function Game(canvas, endGame, updateScore, setLevel, score) {
 };
 
 Game.prototype.start = function() {
-  function loop() {    
+  function loop() {
     this.orderList = this.player.orderList;
     // update variables
     this._updateGame();
     // clear canvas
     this._clearCanvas();
-    // paint 
+    // paint
     this._drawCanvas();
-    
+
     this.animation = window.requestAnimationFrame(loop.bind(this));
-    
+
     if(this.player.isDead()){
       this.endGame();
     };
-    
+
     if(this.player.hasAll()) {
       this.level++;
       if(this.level > levelList.length) {
@@ -105,7 +105,7 @@ Game.prototype.start = function() {
           this.animation = window.requestAnimationFrame(loop.bind(this));
 
         }.bind(this), 1000);
-        window.cancelAnimationFrame(this.animation); 
+        window.cancelAnimationFrame(this.animation);
       }
     }
   };
@@ -114,11 +114,11 @@ Game.prototype.start = function() {
 
 
 Game.prototype.stop = function() {
-  window.cancelAnimationFrame(this.animation); 
+  window.cancelAnimationFrame(this.animation);
 };
 
 Game.prototype.keyLeft = function() {
-  this.player.setDirection(-1);  
+  this.player.setDirection(-1);
 };
 
 Game.prototype.keyRight = function() {
